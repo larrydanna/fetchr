@@ -1,0 +1,28 @@
+﻿@using web.Entities
+@model web.Models.AskIndexViewModel
+
+<h2>Asks Thrown</h2>
+
+<p>
+    @Html.ActionLink("New Bone", "Create", null, new { @class = "btn btn-primary" })
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Description</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var bone in Model.Asks)
+        {
+            <tr>
+                <td>@Html.DisplayTextFor(b => bone.DateCreated)</td>
+                <td>@Html.DisplayTextFor(b => bone.Description)</td>
+                <td>@Html.ActionLink("Edit", "Edit", bone.Id, new { @class = "btn btn-primary" })</td>
+            </tr>
+        }
+    </tbody>
+</table>

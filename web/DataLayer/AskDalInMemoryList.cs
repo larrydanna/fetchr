@@ -36,5 +36,22 @@ namespace web.DataLayer
         {
             return _list;
         }
+
+        public bool Create(Ask ask)
+        {
+            bool retVal = true;
+
+            try
+            {
+                _list.Add(ask);
+            }
+            catch (Exception ex)
+            {
+                // log ex
+                retVal = false;
+            }
+
+            return retVal;
+        }
     }
 }

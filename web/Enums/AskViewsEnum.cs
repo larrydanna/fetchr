@@ -2,6 +2,7 @@
 {
     public enum AskViewsEnum
     {
-        Index
+        Index,
+        Create
     }
 }

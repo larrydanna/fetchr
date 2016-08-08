@@ -8,9 +8,20 @@ namespace web.Models.Builders
 {
     public class AskViewModelBuilder
     {
-        public static AskIndexViewModel Build(AskViewsEnum askViewsEnum, IDataLayer<Ask> askDal)
+        public static AskViewModel Build(AskViewsEnum askViewsEnum, IDataLayer<Ask> askDal)
         {
-            AskIndexViewModel model = new AskIndexViewModel { Asks = askDal.Get() };
+            AskViewModel model = null;
+
+            switch (askViewsEnum)
+            {
+                case AskViewsEnum.Index:
+                    model = new AskIndexViewModel { Asks = askDal.Get() };
+                    break;
+
+                case AskViewsEnum.Create:
+                    model = new AskCreateViewModel { Title = "Throw a Bone!!" };
+                    break;
+            }
 
             return model;
         }

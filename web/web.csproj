@@ -173,6 +173,8 @@
     <Compile Include="Controllers\FetchController.cs" />
     <Compile Include="Entities\Ask.cs" />
     <Compile Include="DataLayer\Interfaces\IDataLayer.cs" />
+    <Compile Include="Models\AskCreateViewModel.cs" />
+    <Compile Include="Models\AskViewModel.cs" />
     <Compile Include="Models\FetchIndexViewModel.cs" />
     <Compile Include="Models\Builders\FetchViewModelBuilder.cs" />
     <Compile Include="Enums\FetchViewsEnum.cs" />
@@ -245,6 +247,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Ask\Index.cshtml" />
     <Content Include="Views\Fetch\Index.cshtml" />
+    <Content Include="Views\Ask\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

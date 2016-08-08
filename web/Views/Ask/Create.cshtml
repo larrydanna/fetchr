@@ -1,0 +1,11 @@
+﻿@model web.Models.AskCreateViewModel
+
+
+<h2>@Model.Title</h2>
+
+
+@using (Html.BeginForm("Create", "Ask", FormMethod.Post))
+{
+    @Html.EditorFor(i => Model.Ask.Description)
+    <input type="submit"/>
+}

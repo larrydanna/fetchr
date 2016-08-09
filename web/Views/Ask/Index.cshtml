@@ -1,5 +1,4 @@
-﻿@using web.Entities
-@model web.Models.AskIndexViewModel
+﻿@model web.Models.AskIndexViewModel
 
 <h2>Bones Thrown</h2>
 
@@ -16,12 +15,12 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var bone in Model.Asks)
+        @foreach (var ask in Model.Asks)
         {
             <tr>
-                <td>@Html.DisplayTextFor(b => bone.DateCreated)</td>
-                <td>@Html.DisplayTextFor(b => bone.Description)</td>
-                <td>@Html.ActionLink("Edit", "Edit", bone.Id, new { @class = "btn btn-primary" })</td>
+                <td>@Html.DisplayTextFor(b => ask.DateCreated)</td>
+                <td>@Html.DisplayTextFor(b => ask.Description)</td>
+                <td>@Html.ActionLink("Edit", "Edit", new { id = ask.Id }, new { @class = "btn btn-primary" })</td>
             </tr>
         }
     </tbody>

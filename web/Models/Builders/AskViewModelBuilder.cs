@@ -1,25 +1,28 @@
 ﻿using System;
-using web.Controllers;
-using web.DataLayer.Interfaces;
-using web.Entities;
+using fetchr.Entities;
+using fetchr.ServiceAccess;
 using web.Enums;
 
 namespace web.Models.Builders
 {
     public class AskViewModelBuilder
     {
-        public static AskViewModel Build(AskViewsEnum askViewsEnum, IDataLayer<Ask> askDal)
+        public static AskViewModel Build(AskViewsEnum askViewsEnum, AskServiceClient askServiceClient)
         {
             AskViewModel model = null;
 
             switch (askViewsEnum)
             {
                 case AskViewsEnum.Index:
-                    model = new AskIndexViewModel { Asks = askDal.Get() };
+                    model = new AskIndexViewModel { Asks = askServiceClient.Get()};
                     break;
 
                 case AskViewsEnum.Create:
-                    model = new AskCreateViewModel { Title = "Throw a Bone!!" };
+                    model = new AskCreateViewModel
+                    {
+                        Title = "Throw a Bone!!",
+                        Ask = new Ask() { DateCreated = DateTime.UtcNow }
+                    };
                     break;
             }
 

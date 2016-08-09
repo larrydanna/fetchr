@@ -1,9 +1,6 @@
 ﻿using System.Web.Mvc;
-using web.DataLayer;
-using web.DataLayer.Interfaces;
-using web.Entities;
+using fetchr.ServiceAccess;
 using web.Enums;
-using web.Managers;
 using web.Models;
 using web.Models.Builders;
 
@@ -11,18 +8,16 @@ namespace web.Controllers
 {
     public class AskController : Controller
     {
-        public IDataLayer<Ask> AskDal = new AskDalInMemoryList();
-
         public ActionResult Index()
         {
-            var askIndexViewModel = (AskIndexViewModel)AskViewModelBuilder.Build(AskViewsEnum.Index, AskDal);
+            var askIndexViewModel = (AskIndexViewModel)AskViewModelBuilder.Build(AskViewsEnum.Index, new AskServiceClient());
 
             return View(askIndexViewModel);
         }
 
         public ActionResult Create()
         {
-            var askCreateViewModel = (AskCreateViewModel)AskViewModelBuilder.Build(AskViewsEnum.Create, AskDal);
+            var askCreateViewModel = (AskCreateViewModel)AskViewModelBuilder.Build(AskViewsEnum.Create, new AskServiceClient());
 
             return View(askCreateViewModel);
         }
@@ -30,17 +25,27 @@ namespace web.Controllers
         [HttpPost]
         public ActionResult Create(AskCreateViewModel askCreateViewModel)
         {
-            var askManager = new AskManager(AskDal);
+            var askServiceClient = new AskServiceClient();
 
-            bool success = askManager.Create(askCreateViewModel.Ask);
+            askServiceClient.Save(askCreateViewModel.Ask);
 
-            if (success)
-            {
-                return RedirectToAction("Index");
-            }
+            return RedirectToAction("Index");
+        }
 
-            return RedirectToRoute("oops");
+        public ActionResult Oops()
+        {
+            return View();
+        }
 
+        public ActionResult Edit(int id)
+        {
+            return RedirectToAction("NotDone");
+        }
+
+        public ActionResult NotDone()
+        {
+
+            return View();
         }
     }
 }

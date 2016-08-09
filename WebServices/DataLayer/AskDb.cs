@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using web.DataLayer.Interfaces;
-using web.Entities;
+using fetchr.Entities;
+using fetchr.GenericPatterns;
+using WebServices.DataLayer.Interfaces;
 
-namespace web.DataLayer
+namespace WebServices.DataLayer
 {
-    public class AskDalInMemoryList : IDataLayer<Ask>
+    public class AskDb : Singleton<AskDb, IAskDb>, IAskDb
     {
         private readonly List<Ask> _list;
 
-        public AskDalInMemoryList()
+        public AskDb()
         {
             _list = new List<Ask>()
             {
@@ -21,7 +22,7 @@ namespace web.DataLayer
                 new Ask()
                 {
                     Description = "The One Ring, please hurry",
-                    DateCreated = DateTime.Now.AddDays(-8)
+                    DateCreated = DateTime.Now.AddDays(-88)
                 },
                 new Ask()
                 {
@@ -30,11 +31,6 @@ namespace web.DataLayer
                 }
             };
 
-        }
-
-        public IEnumerable<Ask> Get()
-        {
-            return _list;
         }
 
         public bool Create(Ask ask)
@@ -52,6 +48,18 @@ namespace web.DataLayer
             }
 
             return retVal;
+        }
+
+        List<Ask> IAskDb.Get()
+        {
+            return _list;
+        }
+
+        public void Save(Ask ask)
+        {
+            ask.DateCreated = DateTime.UtcNow;
+
+            _list.Add(ask);
         }
     }
 }

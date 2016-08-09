@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
-using web.Entities;
 
-namespace web.DataLayer.Interfaces
+namespace WebServices.DataLayer.Interfaces
 {
     public interface IDataLayer<T>
     {

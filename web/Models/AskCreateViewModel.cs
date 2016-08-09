@@ -1,4 +1,5 @@
-﻿using web.Entities;
+﻿
+using fetchr.Entities;
 
 namespace web.Models
 {

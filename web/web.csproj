@@ -169,11 +169,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AskController.cs" />
-    <Compile Include="Managers\AskManager.cs" />
-    <Compile Include="DataLayer\AskDalInMemoryList.cs" />
     <Compile Include="Controllers\FetchController.cs" />
-    <Compile Include="Entities\Ask.cs" />
-    <Compile Include="DataLayer\Interfaces\IDataLayer.cs" />
     <Compile Include="Models\AskCreateViewModel.cs" />
     <Compile Include="Models\AskViewModel.cs" />
     <Compile Include="Models\FetchIndexViewModel.cs" />
@@ -249,6 +245,8 @@
     <Content Include="Views\Ask\Index.cshtml" />
     <Content Include="Views\Fetch\Index.cshtml" />
     <Content Include="Views\Ask\Create.cshtml" />
+    <Content Include="Views\Ask\Oops.cshtml" />
+    <Content Include="Views\Ask\NotDone.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -260,6 +258,16 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClassLibraries\fetchr.Entities\fetchr.Entities.csproj">
+      <Project>{46d9603a-d1ea-4316-8916-1d2e1770f2cd}</Project>
+      <Name>fetchr.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ClassLibraries\fetchr.ServiceAccess\fetchr.ServiceAccess.csproj">
+      <Project>{e0f7a1a1-b509-4bb7-a283-4bc596671868}</Project>
+      <Name>fetchr.ServiceAccess</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

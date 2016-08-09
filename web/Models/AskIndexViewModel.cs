@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using web.Entities;
+using fetchr.Entities;
 
 namespace web.Models
 {

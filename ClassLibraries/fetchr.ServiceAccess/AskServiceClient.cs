@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.Specialized;
+﻿using System.Collections.Generic;
 using System.Net;
 using System.Web.Script.Serialization;
 using fetchr.Entities;
@@ -11,7 +9,12 @@ namespace fetchr.ServiceAccess
     {
         public AskServiceClient()
         {
-            Address = "http://localhost:51767/api/ask";
+            //
+            // Dev Box endpoint
+            //
+            //Address = "http://localhost:51767/api/ask";
+
+            Address = "http://fetchrwebservices.azurewebsites.net/api/ask";
         }
 
         public List<Ask> Get()
@@ -23,13 +26,6 @@ namespace fetchr.ServiceAccess
                 var stream = client.DownloadString(Address);
 
                 retVal = Deserialize<List<Ask>>(stream);
-
-                //DataContractJsonSerializer dataContractJsonSerializer = new DataContractJsonSerializer(typeof(List<Ask>));
-                //var stream = client.OpenRead("http://localhost:51767/api/ask");
-                //if (stream != null)
-                //{
-                //    retVal = (List<Ask>)dataContractJsonSerializer.ReadObject(stream);
-                //}
             }
 
             return retVal;

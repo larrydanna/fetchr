@@ -3,6 +3,7 @@ using web.DataLayer;
 using web.DataLayer.Interfaces;
 using web.Entities;
 using web.Enums;
+using web.Managers;
 using web.Models;
 using web.Models.Builders;
 
@@ -10,18 +11,18 @@ namespace web.Controllers
 {
     public class AskController : Controller
     {
-        private readonly IDataLayer<Ask> _askDal = new AskDalInMemoryList();
+        public IDataLayer<Ask> AskDal = new AskDalInMemoryList();
 
         public ActionResult Index()
         {
-            var askIndexViewModel = (AskIndexViewModel)AskViewModelBuilder.Build(AskViewsEnum.Index, _askDal);
+            var askIndexViewModel = (AskIndexViewModel)AskViewModelBuilder.Build(AskViewsEnum.Index, AskDal);
 
             return View(askIndexViewModel);
         }
 
         public ActionResult Create()
         {
-            var askCreateViewModel = (AskCreateViewModel)AskViewModelBuilder.Build(AskViewsEnum.Create, _askDal);
+            var askCreateViewModel = (AskCreateViewModel)AskViewModelBuilder.Build(AskViewsEnum.Create, AskDal);
 
             return View(askCreateViewModel);
         }
@@ -29,7 +30,7 @@ namespace web.Controllers
         [HttpPost]
         public ActionResult Create(AskCreateViewModel askCreateViewModel)
         {
-            var askManager = new AskManager(_askDal);
+            var askManager = new AskManager(AskDal);
 
             bool success = askManager.Create(askCreateViewModel.Ask);
 
@@ -40,21 +41,6 @@ namespace web.Controllers
 
             return RedirectToRoute("oops");
 
-        }
-    }
-
-    public class AskManager
-    {
-        private readonly IDataLayer<Ask> _dal;
-
-        public AskManager(IDataLayer<Ask> dal)
-        {
-            _dal = dal;
-        }
-
-        public bool Create(Ask ask)
-        {
-            return _dal.Create(ask);
         }
     }
 }

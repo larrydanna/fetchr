@@ -45,7 +45,7 @@ namespace web.DataLayer
             {
                 _list.Add(ask);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 // log ex
                 retVal = false;

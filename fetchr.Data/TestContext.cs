@@ -6,8 +6,6 @@ using System.Reflection;
 
 namespace fetchr.Data
 {
-
-
     public class TestContext 
     {
         public List<Ask> Asks { get; set; }
@@ -19,7 +17,7 @@ namespace fetchr.Data
 
         private List<T> GetSet<T>() where T : class
         {
-            var properties = this.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly);
+            var properties = GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly);
 
             // ReSharper disable once LoopCanBeConvertedToQuery
             foreach (var p in properties)
@@ -63,4 +61,4 @@ namespace fetchr.Data
 
     }
 
-    }
+}

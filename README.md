@@ -16,13 +16,13 @@ Do no harm.
 To provide a proving ground for best practices and experiments.  Please contribute and enjoy!
 
 ## Web Site
-http://160805a.azurewebsites.net/
+http://www.fetchr.xyz/
 
 ### Web Services API
-http://fetchrwebservices.azurewebsites.net/
+http://ws.fetchr.xyz/
 
 ### Fetchr Ask API
-GET - http://fetchrwebservices.azurewebsites.net/api/ask
+GET - http://ws.fetchr.xyz/api/ask
 
 
 # Project Management

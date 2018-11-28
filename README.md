@@ -3,13 +3,14 @@ Fetchr services
 
 Fetchr is a ficticious web service.  
 
-## Mission Statement... alleged.
+This 'reference application' was not completed in it's latest version.  A new version will replace this project in the future.
 
-Fetchr's 'pretend' mission is to enable willing servants to deliver day-to-day household goods to residential customers, and provide world class end-to-end payment services.
+## Mission Statement.
+
+Fetchr's mission is to enable willing servants to deliver day-to-day household goods to residential customers, and provide world class end-to-end payment services.
 
 ## Our Values
 Do no harm.
-
 
 # Actual Mission
 
@@ -23,7 +24,6 @@ http://ws.fetchr.xyz/
 
 ### Fetchr Ask API
 GET - http://ws.fetchr.xyz/api/ask
-
 
 # Project Management
 

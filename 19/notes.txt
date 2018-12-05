@@ -1,0 +1,5 @@
+x Install .Net Core 2.2
+x Move parent project to \16
+Re-create the '18 project
+Configure hosting
+Update Readme.md

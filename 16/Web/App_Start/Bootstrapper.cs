@@ -1,9 +1,10 @@
 ﻿using System.Web.Mvc;
-using Microsoft.Practices.Unity;
-using Microsoft.Practices.Unity.Mvc;
 using fetchr.Interfaces;
 using fetchr.Data.Providers;
 using fetchr.Data;
+using Unity;
+using Unity.AspNet.Mvc;
+using Unity.Injection;
 
 namespace web.App_Start
 {

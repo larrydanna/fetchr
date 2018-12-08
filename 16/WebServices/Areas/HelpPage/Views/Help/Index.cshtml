@@ -6,6 +6,8 @@
 @model Collection<ApiDescription>
 
 @{
+    ViewBag.Title = "ASP.NET Web API Help Page";
+
     // Group APIs by controller
     ILookup<HttpControllerDescriptor, ApiDescription> apiGroups = Model.ToLookup(api => api.ActionDescriptor.ControllerDescriptor);
 }
@@ -14,7 +16,7 @@
 <header class="help-page">
     <div class="content-wrapper">
         <div class="float-left">
-            <h1>Fetchr Web API Help Page</h1>
+            <h1>@ViewBag.Title</h1>
         </div>
     </div>
 </header>
@@ -23,12 +25,12 @@
         <div class="content-wrapper">
             <h2>Introduction</h2>
             <p>
-                These API's manage access to the Fetchr services.
+                Provide a general description of your APIs here.
             </p>
         </div>
     </section>
     <section class="content-wrapper main-content clear-fix">
-        @foreach (var group in apiGroups.Where(w => w.Key.ControllerName.Equals("Ask")))
+        @foreach (var group in apiGroups)
         {
             @Html.DisplayFor(m => group, "ApiGroup")
         }

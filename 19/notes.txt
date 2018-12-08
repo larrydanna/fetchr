@@ -1,5 +1,7 @@
 x Install .Net Core 2.2
 x Move parent project to \16
-Re-create the '18 project
+x Re-create the '18 project
 Configure hosting
 Update Readme.md
+
+Could not deploy .Net Core 2.2, see the error log

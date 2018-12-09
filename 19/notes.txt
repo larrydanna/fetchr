@@ -1,7 +1,25 @@
 x Install .Net Core 2.2
 x Move parent project to \16
 x Re-create the '18 project
-Configure hosting
+x Configure hosting
 Update Readme.md
 
-Could not deploy .Net Core 2.2, see the error log
+x Could not deploy .Net Core 2.2, see the error log
+
+Feature: How to use the site
+Feature: Sign In
+Database
+Use TFS
+Look at other sites for ideas
+Feature: Be a Fetchr (Get Started)
+Feature: Be a Slingr (Get Started)
+Feature: Real-Time Tracking
+Feature: Throw a Bone
+Terms of service
+Feature: Share Links (twitter, facebook, etc.)
+Fetchr services API
+
+
+https://www.ubereats.com/en-US/
+https://www.doordash.com/
+

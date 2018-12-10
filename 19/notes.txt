@@ -7,19 +7,52 @@ Update Readme.md
 x Could not deploy .Net Core 2.2, see the error log
 
 Feature: How to use the site
-Feature: Sign In
 Database
 Use TFS
-Look at other sites for ideas
-Feature: Be a Fetchr (Get Started)
-Feature: Be a Slingr (Get Started)
-Feature: Real-Time Tracking
-Feature: Throw a Bone
-Terms of service
-Feature: Share Links (twitter, facebook, etc.)
+x Look at other sites for ideas
+x Terms of service
+Feature: Social Networking Links (twitter, facebook, etc.)
 Fetchr services API
 
 
 https://www.ubereats.com/en-US/
 https://www.doordash.com/
+
+
+
+***
+*** Feature: Be a Fetchr (Get Started)
+***
+
+Controller /fetchr/signup 
+
+
+***
+*** Feature: Be a Slingr (Get Started) 
+***
+
+Controller /slingr/signup
+
+
+***
+*** Feature: Throw a Bone
+***
+
+Controller /sling
+
+Controller /checkout
+
+
+***
+*** Feature: Real-Time Tracking
+***
+
+Controller /tracking
+
+
+***
+*** Feature: Sign In
+***
+
+Controller /signin
 

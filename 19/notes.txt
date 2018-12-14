@@ -56,3 +56,13 @@ Controller /tracking
 
 Controller /signin
 
+
+***
+*** Authentication
+***
+
+*** ASP.NET Identity
+
+https://docs.microsoft.com/en-us/aspnet/core/security/authorization/secure-data?view=aspnetcore-2.2
+
+

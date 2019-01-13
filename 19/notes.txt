@@ -18,6 +18,19 @@ Fetchr services API
 https://www.ubereats.com/en-US/
 https://www.doordash.com/
 
+https://fetchr.visualstudio.com/fetchr
+
+
+***
+*** Feature: Async Toast Responses
+***
+
+When an action is taken, return the user to a parent view
+then update the user via toast messages asynchronously.
+... like Azure does.
+
+- Request recieved
+- etc.
 
 
 ***
